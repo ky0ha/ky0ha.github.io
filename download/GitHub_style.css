@@ -1,0 +1,70 @@
+#code_block {
+    background: #2d2d2d;
+    color: rgb(201,209,217);
+    font-family: Consolas;
+    text-align: left;
+    padding: 1em;
+    padding-left: 0.8em;
+    margin: 1em;
+    border-radius: 5px;
+    counter-reset: line;
+    white-space: normal;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    width: calc(100% - 63px);
+    overflow-x: auto;
+}
+
+#code_block code {
+    font-family: Consolas;
+}
+
+#code_block .key_word,
+#code_block .operator,
+#code_block .united {
+    color: rgb(255,123,114);
+}
+#code_block .value,
+#code_block .default_function_name,
+#code_block .attribute {
+    color: rgb(121,192,255);
+}
+#code_block .note {
+    color: rgb(139,148,158);
+}
+#code_block .created_function_name {
+    color: rgb(210,168,255);
+}
+#code_block .class_name {
+    color: rgb(247,162,87);
+}
+#code_block .string {
+    color: rgb(165,214,255);
+}
+#code_block .tag {
+    color: #7EE787;
+}
+#code_block .href_link {
+    color: rgb(165,214,255);
+    border-bottom: 2px solid rgb(165,214,255);
+}
+
+#code_block span {
+    display: block;
+    line-height: 1.5rem;
+    white-space: pre;
+}
+
+#code_block span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    border-right: 2px solid #999;
+    padding-right: .8em;
+    margin-right: 1em;
+    color: #999;
+}
