@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>哈夫曼编码</title>
+        <link rel="stylesheet" href="./css/brief_introduction.css">
+    </head>
+
+    <body>
+        <div class="main_items_screen">
+            <div class="nav_items">
+                <div class="main_items_logo">
+                    <a href="./index.html" class="logo"><img src="./image/logo.png" alt="logo" width="66" height="66"></a>
+                </div>
+                <div class="main_items_nav">
+                    <nav>
+                        <ul>
+                            <li class="home_page"><a href="./index.html" onmousedown="style.color='white';" onmouseup="style.color='black';">主页</a></li>
+                            <li class="about_me"><a href="./describe.html" onmousedown="style.color='white';" onmouseup="style.color='black';">简介</a></li>
+                            <li class="process_menu"><a href="./download_page.html" onmousedown="style.color='white';" onmouseup="style.color='black';">项目目录</a></li>
+                            <li class="download_list"><a href="./friends.html" onmousedown="style.color='white';" onmouseup="style.color='black';">好友</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="main_items_login">
+                    <a href="./login.html" target="_blank" onmousedown="style.color='white';" onmouseup="style.color='black';">登录</a>
+                </div>
+            </div>
+            
+            <div class="icon_and_menu">
+                <div class="icon_area_with_nick">
+                    <div class="icon">
+                        <img src="./image/null-5cf6fe7f63b3f7e4.jpg" alt="头像" width="150" height="150">
+                    </div>
+                    <div class="nick_name">ky0haの部屋</div>
+                    <div class="describe">一个没有动力的咸鱼~</div>
+                    <div class="contact">
+                        <p><br>qq：253157225</p>
+                        <p>邮箱：mitchelltodd434@gmail.com</p>
+                        <p>twitter：<a href="https://twitter.com/ky0ha" target="_blank">@ky0ha</a></p>
+                        <p>twitch: <a href="https://www.twitch.tv/xysamaw" target="_blank">@xysamaw</a></p>
+                        <p>yotube: <a href="https://www.youtube.com/channel/UCQ4pXi3zxS-p0GCU33M38dw" target="_blank">@ha kyo</a></p>
+                        <p>bilibili: <a href="https://space.bilibili.com/6865994" target="_blank">@虚叶</a></p>
+                        <p>pixiv: <a href="https://www.pixiv.net/users/69347573" target="_blank">@kyoha</a></p>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <div class="menu_title">
+                        <p>项目列表</p>
+                    </div>
+                    <div class="menu_body">
+                        <nav>
+                            <ol>
+                                <li><a href="./huffman_project.html">哈夫曼编码译码器<br><span>python同时实现编码译码</span></a></li>
+                                <li><a href="./multiple_linear_regression.html">基于 pandas 实现回归分析<br><span>使用pandas进行回归学习</span></a></li>
+                                <li><a href="./github_style_project.html">纯css实现代码样式<br><span>html+css实现github代码样式</span></a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main_text">
+                <h1>哈夫曼编码译码器</h1>
+                <h2>简介</h2>
+                <p>在之前的数据结构课题设计作业里，我和组员一起完成了一个哈夫曼编码译码器。</p>
+                <p>程序采用 python 为基础，分为编码端和译码端两个程序，以下为程序的 markdown 文件内容：</p>
+                <blockquote class="block-quote">
+                    # All rights Reserved, Designed By www.xysama.cn<br>
+                    # @projectName huffman en-decoding<br>
+                    # @author ky0ha     <br>
+                    # @date   2021.05.29  <br>
+                    # @version V1.0.0<br>
+                    # @copyright www.xysama.cn<br>
+                    # 注意 本内容仅限于学习交流使用，禁止用作商业用途<br>
+                    <br>
+                    哈夫曼编码程序文件<br>
+                    <br>
+                    ./decode 和 ./encode 为本体程序的编码端和解码端的快捷方式，其中 decode 为编码端，encode 为解码端<br>
+                    <br>
+                    程序使用 python 语言实现，gui 的实现使用 python 的 tkinter 库<br>
+                    程序使用的库有：tkinter，json，os，time，random，pickle<br>
+                    由于exe未经过真正意义的打包，故必须在拥有上述库以及 python 3.x 运行环境下使用<br>
+                    <br>
+                    压缩后的 *.svd 文件为自定义文件格式 save data file，本质为 *.json 文件，<br>
+                    文件的格式为<br>
+                    {<br>
+                        "binary_data": "11111110110111010101100000011",<br>
+                        "code_len": "29",<br>
+                        "decode": {<br>
+                            "E": "00",<br>
+                            "C": "01",<br>
+                            "D": "100",<br>
+                            "B": "101",<br>
+                            "A": "11"<br>
+                        }<br>
+                    }<br>
+                    其中 "binary_data" 和 "decode" 内的 01 数据由 python 更改为二进制数据，并直接存储于 *.json 文件内，<br>
+                    当解码的时候再根据二进制数据翻译为字符串，进行解码<br>
+                    <br>
+                    注意：程序并未使用 python 的 pyinstaller 进行打包，所以文件内的各个部分理论上可以随意移动且不受影响，但是最好不要随意改动，<br>
+                    因为程序代码并没有进行十分完善的 debug 环节和 bug 捕获。<br>
+                    如果程序出现不知名的 bug 导致无法正常运行，请尝试重新解压。如果问题依旧存在，请联系制作者。<br>
+                </blockquote>
+                <!-- <pre id="code_block"><span>print("helloworld")</span><span>print("helloagain")</span></pre> -->
+                <h2>程序思路</h2>
+                <h3>编码端思路</h3>
+                <p><br></p>
+                <p>1、对于小文本，采取直接从输入框获取输入文本内容的方式获取内容，用户可以直接从输入弹窗手动输入文本内容用以编码。而对于大文本来说，从输入框手动输入虽然可行，然是很明显过于麻烦，不可取。于是我们采用了从文件读取的方式，默认文件格式为 txt 文本文件（<strong>注意：文本格式必须为 utf-8 编码</strong>）</p>
+                <p><br></p>
+                <p>2、将获取的输入文本存储为字符串变量，由于哈夫曼编码的特性，先对字符串做一个词频统计，python 词频统计代码如下：</p>
+                <pre id="code_block">
+                    <span>weight_dict <code class="operator">=</code> {}</span>
+                    <span><code class="key_word">for</code> value <code class="key_word">in</code> string:</span>
+                    <span>    weight_dict[value] <code class="operator">=</code> weight_dict.setdefault(value, <code class="value">0</code>) + <code class="value">1</code></span>
+                </pre>
+                <!-- <pre id="code_block"><span>weight_dict = {}</span><span>for value in string:</span><span>    weight_dict[value] = weight_dict.setdefault(value, 0) + 1</span></pre> -->
+                <p>其中 string 是存储了待编码字符串的变量名，采用 python 字典的 setdefault() 方法进行简单的词频统计（实际上是逐字统计，并不是按词汇）。</p>
+                <p><br></p>
+                <p>3、根据词频统计结果设置结点的权重和内容，构建哈夫曼树。</p>
+                <p>首先声明一个列表，用来存放所有的制作好的结点。然后将列表一直维持在有序状态，通过结点的权重进行排序。每次从列表中取最前面的两个，他们的权重是最小的，利用递推的方法，将所有的结点全部进行连接，最后列表中会只剩下一个节点，将节点命名为 root，作为根节点取出，这样就构建好了整个哈夫曼树。</p>
+                <p>结点列表制作代码：(其中 weight_dict 为词频统计的结果字典，node 为声明的结果对象)</p>
+                <pre id="code_block">
+                    <span>node_list <code class="operator">=</code> []</span>
+                    <span>len_list <code class="operator">=</code> <code class="default_function_name">len</code>(node_list)</span>
+                    <span><code class="key_word">for</code> key, value <code class="key_word">in</code> weight_dict.items():</span>
+                    <span>    node_list.append(node(key, value))</span>
+                    <span>    len_list<code class="operator">+=</code><code class="value">1</code></span>
+                    <span>node_list.sort(key<code class="operator">=</code><code class="key_word">lambda</code> x:(x.weight, <code class="operator">-</code>len(x.value), x.value))</span>
+                    <span><code class="note"># 使用元组作为 sort 的参数 key 可以做到根据多个值排序，key 的值内容为负表示根据该内容的反序排序</code></span>
+                </pre>
+                <p>哈夫曼树构建代码：（其中 print_tree 为前序遍历输出树的函数）</p>
+                <pre id="code_block">
+                    <span><code class="key_word">while</code> len_list<code class="operator">></code><code class="value">1</code>:</span>
+                    <span>    root <code class="operator">=</code> node()</span>
+                    <span>    root.add_lchild(node_list.pop(<code class="value">0</code>))</span>
+                    <span>    root.add_rchild(node_list.pop(<code class="value">0</code>))</span>
+                    <span>    root.weight <code class="operator">=</code> root.lchild.weight <code class="operator">+</code> root.rchild.weight</span>
+                    <span>    <code class="key_word">for</code> index, value <code class="key_word">in</code> enumerate(node_list):</span>
+                    <span>        <code class="key_word">if</code> root.weight <code class="operator"><</code> value.weight:</span>
+                    <span>            node_list.insert(index, root)</span>
+                    <span>            print_tree(root)</span>
+                    <span>    <code class="key_word">else</code>:</span>
+                    <span>    node_list.append(root)</span>
+                    <span>    print_tree(root)</span>
+                    <span>len_list<code class="operator">-=</code><code class="value">1</code></span>
+                </pre>
+                <p><br></p>
+                <p>4、根据哈夫曼树编码字符串</p>
+                <p>将字符串逐字遍历，在字典中寻找对应的值，直接用值替换原本的字（键），从而将字符串编译为一个 01 字符串。</p>
+                <p><br></p>
+                <p>5、实现部分内容的显示和编码内容的保存功能</p>
+                <p>既然有编码，就存在解码，编码端和解码端的唯一交互方式就是通过编码后的文件，所以文件存储在编码端中显得尤为重要。</p>
+                <p>通过将编码串和编码长度以及根据哈夫曼树构成的编码表存入一个字典，将字典直接通过 plcket 库打包为二进制文件。但实际上如果直接这样打包，可以看到 01 串中的一个 0 或者 1 本质上还是字符，占用 1 个字节，并没有实现真正的压缩效果。</p>
+                <p>对于上述问题，我在用 plcket 打包之前，将编码字符串直接变转换为对应的二进制数，对于编码表的 01 串也采用相同的方式转换，这样在打包为二进制文件的时候才能使一个 1 或者 0 以 1 比特的形式存储。</p>
+                <p>但是实际上还有一个问题的出现，因为二进制码存在 0 开头的编码串，但是在译码端将二进制的编码串翻译回字符串的时候会导致 0 开头的部分，开头的 0 被忽略掉，所以我使用的方式是牺牲一个比特，放在编码串最前面，并置为 1，这样无论怎么变换，都不会导致前面的 0 被忽略。</p>
+                <img src="./image/QQ截图20210615222639.png" alt="大文件压缩率显著，小文件呈现负压缩">
+                <p>实际的测试结果，对于大文件的压缩率在50%左右，而对于小文件由于存储格式的限制，4kb 以下的文件普遍呈现出负压缩的现象。这是由于算法本身的问题，没有解决的方法，而且由于哈夫曼编码的局限性，对于文本复杂度低的文本压缩率很高（比如英文），而对于文本复杂度较高的文本来说（比如中文，中文的常用字差不多2000个），压缩率很低，这个问题也无法解决。</p>
+                <h3>解码端思路</h3>
+                <p><br></p>
+                <p>1、选择编码文件并进行格式化</p>
+                <p>从窗口选择编码文件（编码文件在编码端保存的时候定义为 *.svd 文件），将编码文件从二进制翻译为 python 的字典对象，然后将编码表用 zip() 方法进行翻转，转化为译码表。</p>
+                <p>svd 文件读取后的格式化过程：</p>
+                <pre id="code_block">
+                    <span>save_file <code class="operator">=</code> {</span>
+                    <span>    <code class="string">'binary_data'</code>: to_str(temp[<code class="string">'binary_data'</code>]),</span>
+                    <span>    <code class="string">'code_len'</code>:<code class="defalut_function_name">int</code> (temp[<code class="string">'code_len'</code>]),</span>
+                    <span>    <code class="string">'decode'</code>: <code class="default_function_name">dict</code>(<code class="default_function_name">zip</code>(temp[<code class="string">'decode'</code>].keys(), <code class="default_function_name">list</code>(<code class="default_function_name">map</code>(to_str, temp[<code class="string">'decode'</code>].values())))),</span>
+                    <span>}</span>
+                </pre>
+                <p><br></p>
+                <p>2、将格式化后的编码串根据译码表译码</p>
+                <p>创建两个队列指针 left 和 right，left 固定在第一个，right 向后递推，当 [left， right) 的左闭右开区间内的编码在译码表中有对应的值，则用值替换区间内的编码串，left 移动到 right 位置，right 继续向后递推。从而实现用滑动窗口的方法遍历整个编码串，从而进行译码。</p>
+                <p>滑动窗口实现过程：</p>
+                <pre id="code_block">
+                    <span>left, right, <code class="operator">=</code> <code class="value">0</code>, <code class="value">1</code></span>
+                    <span><code class="key_word">while</code> right<code class="operator"><=</code> code_len:</span>
+                    <span>    <code class="key_word">if</code> binary_data[left:right] <code class="key_word">in</code> decode:</span>
+                    <span>        result<code class="operator">+=</code>decode[binary_data[left:right]]</span>
+                    <span>        left <code class="operator">=</code> right</span>
+                    <span>        right <code class="operator">=</code> left<code class="operator">+</code><code class="value">1</code></span>
+                    <span>    <code class="key_word">else</code>:</span>
+                    <span>        right <code class="operator">+=</code> <code class="value">1</code></span>
+                </pre>
+                <p><br></p>
+                <p>3、通过 randint 实现随机更新进度</p>
+                <p>当我使用 tkinter 制作进度条显示的时候，因为 python 有全局锁，导致一个 python 程序只能使用一个 cpu，导致 python 的效率受限。其次是因为刚开始我的进度条是每遍历一个编码串字符，就要刷新一次进度条，导致因为刷新频率太快而程序效率极其低下。</p>
+                <p>为了解决这个问题，我将进度条设置为 10 格，每 10% 更新一次，一次更新一格，然后再进度显示的文本处通过 random 库的 randint 实现了随机频率的文本更新。原理是在每一次更新文本的时候，都调用一次 randint(7,100)，生成一个 7 到 100 之间的随机数，由于单位问题，这里实际上是 0.07% 到 1% 的更新间隔，从而使下一次更新间隔完全随机，实现更新间隔的随机更新效果。</p>
+                <pre id="code_block">
+                    <span><code class="key_word">if</code> speed<code class="operator">%</code>flag<code class="operator">==</code>0: </span>
+                    <span>    s.set(<code class="string">"解码进度：</code><code class="value">{:.2f}</code><code class="string">%"</code>.format(speed<code class="operator">/</code><code class="value">100</code>))</span>
+                    <span>    flag = random.randint(<code class="value">7</code>,<code class="value">100</code>)</span>
+                    <span>    init_window_name.update()</span>
+                </pre>
+                <p><br></p>
+                <p>4、最后将解码完的字符串进行输出</p>
+                <p><br></p>
+                <h4>如果你想下载这个项目，请点击这里：<a href="./download/哈夫曼编码解码器.rar" download>下载项目</a></h4>
+            </div>
+        </div>
+
+        <footer class="footers">
+            <p>
+                Copyright © 2021-2021 <a href="http://www.xysama.cn" target="_blank">ky0haの部屋 www.xysama.cn </a> All Rights Reserved. 
+            </p>
+        </footer>
+    </body>
+</html>

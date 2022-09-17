@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="./css/login_style.css" />
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <div class="control">
+        <div class="item">
+            <div class="active">登录</div><div>注册</div>
+        </div>
+        <div class="content">
+            <div style="display: block;">
+                <p>账号</p>
+                <input id="login_username" type="text" placeholder="username" />
+                <p>密码</p>
+                <input id="login_password" type="password" placeholder="password" maxlength="16" />
+                <br/>
+                <input type="submit" value="登录" onclick=login() />
+            </div>
+            <div>
+                <p>用户名</p>
+                <input id="register_username" type="text" placeholder="username" />
+                <p>密码</p>
+                <input id="register_password" type="password" placeholder="password" />
+                <p>邮箱</p>
+                <input id="email_address" type="text" placeholder="email" />
+                <p>验证码</p>
+                <input id="vcode" type="text" placeholder="vcode">
+                <input id="get_vcode" type="button" onclick=sent_email() value="获取验证码">
+                <br/>
+                <input type="submit" value="注册" onclick=register() />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

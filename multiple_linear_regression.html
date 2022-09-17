@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>基于 pandas 的多元线性回归模型</title>
+        <link rel="stylesheet" href="./css/brief_introduction.css">
+    </head>
+
+    <body>
+        <div class="main_items_screen">
+            <div class="nav_items">
+                <div class="main_items_logo">
+                    <a href="./index.html" class="logo"><img src="./image/logo.png" alt="logo" width="66" height="66"></a>
+                </div>
+                <div class="main_items_nav">
+                    <nav>
+                        <ul>
+                            <li class="home_page"><a href="./index.html" onmousedown="style.color='white';" onmouseup="style.color='black';">主页</a></li>
+                            <li class="about_me"><a href="./describe.html" onmousedown="style.color='white';" onmouseup="style.color='black';">简介</a></li>
+                            <li class="process_menu"><a href="./download_page.html" onmousedown="style.color='white';" onmouseup="style.color='black';">项目目录</a></li>
+                            <li class="friends"><a href="./friends.html" onmousedown="style.color='white';" onmouseup="style.color='black';">好友</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="main_items_login">
+                    <a href="./html/login.html" target="_blank" onmousedown="style.color='white';" onmouseup="style.color='black';">登录</a>
+                </div>
+            </div>
+            
+            <div class="icon_and_menu">
+                <div class="icon_area_with_nick">
+                    <div class="icon">
+                        <img src="./image/null-5cf6fe7f63b3f7e4.jpg" alt="头像" width="150" height="150">
+                    </div>
+                    <div class="nick_name">ky0haの部屋</div>
+                    <div class="describe">一个没有动力的咸鱼~</div>
+                    <div class="contact">
+                        <p><br>qq：253157225</p>
+                        <p>邮箱：mitchelltodd434@gmail.com</p>
+                        <p>twitter：<a href="https://twitter.com/ky0ha" target="_blank">@ky0ha</a></p>
+                        <p>twitch: <a href="https://www.twitch.tv/xysamaw" target="_blank">@xysamaw</a></p>
+                        <p>yotube: <a href="https://www.youtube.com/channel/UCQ4pXi3zxS-p0GCU33M38dw" target="_blank">@ha kyo</a></p>
+                        <p>bilibili: <a href="https://space.bilibili.com/6865994" target="_blank">@虚叶</a></p>
+                        <p>pixiv: <a href="https://www.pixiv.net/users/69347573" target="_blank">@kyoha</a></p>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <div class="menu_title">
+                        <p>项目列表</p>
+                    </div>
+                    <div class="menu_body">
+                        <nav>
+                            <ol>
+                                <li><a href="./huffman_project.html">哈夫曼编码译码器<br><span>python同时实现编码译码</span></a></li>
+                                <li><a href="./multiple_linear_regression.html">基于 pandas 实现回归分析<br><span>使用pandas进行回归学习</span></a></li>
+                                <li><a href="./github_style_project.html">纯css实现代码样式<br><span>html+css实现github代码样式</span></a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main_text">
+                <h1>基于 pandas 和 numpy 实现多元线性回归模型</h1>
+                <h2>简介</h2>
+                <p>在学习多元线性回归模型的时候，我尝试了这样的一个程序。</p>
+                <p>将一个大约 2w 行的 csv 数据集读取进入程序，并且筛选有价值的数据，对其进行分析和处理，最后构建出一个多元线性回归的模型。</p>
+                <p>以下为我写的程序的说明部分（纯英文）：</p>
+                <pre id="code_block">
+                    <span><code class="note">'''</code></span>
+                    <span><code class="note">author: ky0ha</code></span>
+                    <span><code class="note">title: A classifier by multiple linear regression</code></span>
+                    <span><code class="note">argument: </code></span>
+                    <span><code class="note">    fpath: a string, is the position of data-file</code></span>
+                    <span><code class="note">    fmodel: a string, is the model of data-file (default is 'csv')</code></span>
+                    <span><code class="note">    isdropna: a bool, drop NAN of data? True is drop, False isn't drop (defalut is True)</code></span>
+                    <span><code class="note">    droplist: a list, value of the list is characteristics of data want to del, all characteristics is string</code></span>
+                    <span><code class="note">    smatrix: a matrix, shape is (n, 1), to change the value of string to be the number type, sample: </code></span>
+                    <span><code class="note">            [["characteristric1", {"string1": value1}], </code></span>
+                    <span><code class="note">            ["characteristric2", {"string2": value2}]] meanscharacteristric1's string1 change to value1</code></span>
+                    <span><code class="note">    n: a int, is the length of data to be training</code></span>
+                    <span><code class="note">    characteristic_list: a list, value in list is string, means the list of the characteristics</code></span>
+                    <span><code class="note">    mark: a string, is the mark of data</code></span>
+                    <span><code class="note">return: a array, is the argument matrix, can actually use in estimate fuction</code></span>
+                    <span><code class="note"></code>'''</span>
+                </pre>
+                <p>大致说明了程序内各个参数的意义和最后的返回值的意义：</p>
+                <ol>
+                    <li><p>fpath 是一个字符串，存放的是数据文件的绝对路径</p></li>
+                    <li><p>fmodel 是一个字符串，是读取的数据文件的后缀名，默认是 csv</p></li>
+                    <li><p>isdropna 是一个布尔值，意思为是否丢掉数据文件中的空值，如果为是，则丢弃，如果是否，则不丢弃</p></li>
+                    <li><p>smatrix 是一个矩阵，n行2列，目的是为了将数据表里面的字符串类型替换为数值类型，矩阵内容为 [["characteristric1", {"string1": value1}],...]，前者是要改变的内容的列索引名，后者是字典，字典的键是字符串，值是数值，效果是将 "characteristric1" 列的所有 "string1" 改变为 value1</p></li>
+                    <li><p>n 是一个整数，是数据表用作训练集的数据长度</p></li>
+                    <li><p>characteristic_list 是一个列表，存放的是所有的列索引名</p></li>
+                    <li><p>mark 是一个字符串，是数据的一个标记</p></li>
+                    <li><p>返回值是一个参数数组，即模型的参数表</p></li>
+                </ol>
+                <p>对于库的引用部分：</p>
+                <pre id="code_block">
+                    <span><code class="key_word">import</code> pandas <code class="key_word">as</code> pd</span>
+                    <span><code class="key_word">import</code> numpy <code class="key_word">as</code> np</span>
+                    <span><code class="key_word">from</code> math <code class="key_word">import</code> sqrt</span>
+                    <span><code class="key_word">from</code> matplotlib <code class="key_word">import</code> pyplot <code class="key_word">as</code> plt</span>
+                </pre>
+                <p><br></p>
+                <h2>数据清洗</h2>
+                <p>通过 drop 方法去掉无关列。通过 reset_index(drop=True) 丢掉读取自带的列索引。然后通过 dropna 方法丢弃所有含有空值的行。</p>
+                <pre id="code_block">
+                    <span>f.drop([<code class="string">"RowNumber"</code>,<code class="string">"CustomerId"</code>,<code class="string">"<code class="string">"RowNumber"</code>Surname"</code>,<code class="string">"HasCrCard"</code>], axis<code class="operator">=</code><code class="value">1</code>, inplace<code class="operator">=</code><code class="value">True</code>)</span>
+                    <span><code class="key_word">if</code> isdropna:</span>
+                    <span>    f.dropna(axis<code class="operator">=</code><code class="value">0</code>, how<code class="operator">=</code><code class="string">'any'</code>, thresh<code class="operator">=</code><code class="value">None</code>, subset<code class="operator">=</code><code class="value">None</code>, inplace<code class="operator">=</code><code class="value">True</code>)</span>
+                    <span>f <code class="operator">=</code> f.reset_index(drop<code class="operator">=</code><code class="value">True</code>)</span>
+                </pre>
+                <p>通过对指定列使用 map(dict) 方法，依据字典的键值对将列内所有的字符型数据替换为数值数据。</p>
+                <pre id="code_block">
+                    <span>dic <code class="operator">=</code> {<code class="string">"France"</code>: <code class="value">1</code>, <code class="string">"Spain"</code>: <code class="value">2</code>, <code class="string">"Germany"</code>: <code class="value">3</code>}</span>
+                    <span>f[<code class="string">"Geography"</code> <code class="operator">=</code> f[<code class="string">"Geography"</code>].map(dic)</span>
+                    <span>dicf <code class="operator">=</code> {<code class="string">"Female"</code>: <code class="value">0</code>, <code class="string">"Male"</code>: <code class="value">1</code>}</span>
+                    <span>f[<code class="string">"Gender"</code>] <code class="operator">=</code> f[<code class="string">"Gender"</code>].map(dicf)</span>
+                </pre>
+                <p>将数据提取并赋值在矩阵内</p>
+                <pre id="code_block">
+                    <span>CL <code class="operator">=</code> []</span>
+                    <span><code class="key_word">for</code> i <code class="key_word">in</code> characteristic_list:</span>
+                    <span>    CL.append(np.array(<code class="default_function_name">list</code>(f.loc[:,i]))[:n])</span>
+                </pre>
+                <p><br></p>
+                <h2>模型的构建过程</h2>
+                <p>将提取的数据矩阵和一个新构建的全 1 向量拼接在一起，将训练集作为一个单独的向量，存放在变量 y 内。通过最小二乘法，依据 x 和 y 矩阵，计算出使损失函数最小的参数矩阵 theta_best。</p>
+                <pre id="code_block">
+                    <span><code class="key_word">def</code> <code class="created_function_name">getTheta</code>(X_b, y):</span>
+                    <span>    <code class="key_word">return</code> np.linalg.inv.(X_b.T.dot(X_b)).dot(X_b.T).dot(y)</span>
+                    <span></span>
+                    <span>X_b <code class="operator">=</code> np.one((n,<code class="value">1</code>))</span>
+                    <span>y <code class="operator">=</code> np.array(<code class="default_function_name">list</code>(f.loc[:,mark]))[:n]</span>
+                    <span><code class="key_word">for</code> i <code class="key_word">in</code> CL:</span>
+                    <span>    X_b <code class="operator">=</code> np.c_[X_b, i]</span>
+                    <span><code class="note"># 带入 x 矩阵求得参数矩阵 theta_best</code></span>
+                    <span>theta_best <code class="operator">=</code> getTheta(X_b,y)</span>
+                </pre>
+                <p><br></p>
+                <h2>总结</h2>
+                <p>从 0 开始一点一点的构建整个模型的计算体系，而且此计算方法可以套用在任何简单线性回归/多元线性回归内，主要采用的方法就是利用 pandas 进行数据的清洗和提取，然后利用 numpy 构建矩阵并进行计算，通过最小二乘法求得 theta_best 参数矩阵，最后利用参数矩阵进行模型的测试。</p>
+                <p>模型测试部分没有写入此文档内，因为有点多，而且写了一整天，有点累了。。。日后可能会慢慢补充，还请见谅！</p>
+                <p><br></p>
+                <h4>如果你想下载这个项目的css，请点击这里：<a href="./download/multiple_linear_regression.py" download>点击下载</a></h4>
+            </div>
+        </div>
+
+        <footer class="footers">
+            <p>
+                Copyright © 2021-2021 <a href="http://www.xysama.cn" target="_blank">ky0haの部屋 www.xysama.cn </a> All Rights Reserved. 
+            </p>
+        </footer>
+    </body>
+</html>
