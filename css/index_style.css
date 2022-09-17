@@ -1,0 +1,296 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::selection{
+    color: rgba(250, 93, 93, 0.822);
+    background-color: rgba(0, 255, 255, 0.561);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: blueviolet;
+}
+a:visited {
+    color: blueviolet;
+}
+a:active {
+    color: red;
+}
+a:hover {
+    color: deeppink;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgb(89, 113, 251),rgb(170, 106, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main_items_screen {
+    padding-bottom: 50px;
+}
+
+.main_items_screen .nav_items {
+    width: 100%;
+    height: 88px;
+    background-image: linear-gradient(to bottom right, rgb(183, 117, 255), rgb(135, 147, 255));
+}
+
+.main_items_screen .nav_items div {
+    display: inline-block;
+}
+
+/* logo样式 */
+.main_items_screen .nav_items .main_items_logo {
+    padding-left: 14px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 14px;
+    display: inline-block;
+    position: absolute;
+}
+
+/* 导航栏样式 */
+.main_items_screen .nav_items .main_items_nav li {
+    height: 88px;
+    width: calc(25% - 4px);
+    margin-right: 2px;
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    float: left;
+    font-size: 25px;
+    border-left: 1px dotted gray;
+    border-right: 1px dotted gray;
+    transition: 0.25s;
+}
+
+.main_items_screen .nav_items .main_items_nav li:hover {
+    background: #ff40d6a9;
+}
+
+/* 当前页面在导航栏中特殊强调 */
+.main_items_screen .nav_items .main_items_nav .home_page {
+    background: rgba(255, 105, 255, 0.746);
+    height: 85px;
+    border-bottom: 3px solid aqua;
+}
+
+/* 导航栏容纳盒子（真的有意义么 */
+.main_items_screen .nav_items .main_items_nav {
+    width: calc(50% + 326px);
+    height: 88px;
+    display: inline-block;
+    margin-left: 15%;
+    background: #f8a7ff77;
+    text-align: center;
+}
+
+/* 导航栏超链接文字位置 */
+.main_items_screen .nav_items .main_items_nav a {
+    height: 100%;
+    grid-row: 2;
+}
+
+/* 登录按钮的样式 */
+.main_items_screen .nav_items .main_items_login {
+    float: right;
+    height: 68px;
+    width: 68px;
+    box-shadow: 0 10px 50px 0px rgb(59, 45, 159);
+    margin: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    background: #f8a7ff77;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.main_items_screen .nav_items .main_items_login:hover{
+    background: #ff40d6a9;
+    border-radius: 25px;
+    margin: 0px;
+    width: 88px;
+    height: 88px;
+}
+
+.main_items_screen .nav_items .main_items_login a{
+    grid-row: 2;
+}
+
+/* 头像和文字介绍部分样式 */
+.main_items_screen .icon_and_preface {
+    position: relative;
+    width: calc(100% - 34%);
+    left: 15%;
+    top: 40px;
+    background: rgba(245, 245, 245, 0.322);
+    box-shadow: 0 10px 50px 0px rgb(59, 45, 159);
+    /* border: 2px solid gray; */
+    border-radius: 35px;
+    padding: 35px;
+    display: inline-flex;
+}
+
+.main_items_screen .icon_and_preface .icon_area_with_nick,
+.main_items_screen .icon_and_preface .home_page_describe {
+    display: inline-block;
+}
+
+.main_items_screen .icon_and_preface .icon_area_with_nick {
+    position: relative;
+    left: 10px;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.561);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.main_items_screen .icon_and_preface .icon_area_with_nick .icon img {
+    border-radius: 50%;
+}
+
+.main_items_screen .icon_and_preface .icon_area_with_nick .nick_name {
+    font-size: 35px;
+    font-family: UD デジタル 教科書体 NP-B;
+}
+
+.main_items_screen .icon_and_preface .icon_area_with_nick .describe {
+    font-size: 20px;
+    font-family: KaiTi;
+    font-weight: 700;
+}
+
+.main_items_screen .icon_and_preface .home_page_describe {
+    position: relative;
+    width: 70%;
+    min-height: 210px;
+    background: rgba(245, 245, 245, 0.561);
+    margin: 10px;
+    margin-left: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+    font-size: 25px;
+}
+
+.main_items_screen .icon_and_preface .home_page_describe .home_page_describe_title {
+    font-size: 35px;
+    font-family: KaiTi;
+    font-weight: 1000;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.main_items_screen .icon_and_preface .home_page_describe .preface {
+    text-align: left;
+    text-indent: 1.5em;
+}
+
+/* 内容速览部分 */
+.main_items_screen .show_projects_parking {
+    position: relative;
+    width: calc(100% - 34%);
+    left: 15%;
+    top: 90px;
+    min-height: 180px;
+    background: rgba(245, 245, 245, 0.322);
+    box-shadow: 0 10px 50px 0px rgb(59, 45, 159);
+    /* border: 2px solid gray; */
+    border-radius: 35px;
+    padding: 35px;
+    display: inline-flex;
+}
+
+.main_items_screen .show_projects_parking .show_info_of_projects_parking {
+    font-size: 35px;
+    font-family: KaiTi;
+    font-weight: 1000;
+    width: 35px;
+    min-height: 25px;
+    margin-right: 10px;
+    text-align: justify;
+    padding: 15px;
+}
+
+.main_items_screen .show_projects_parking .project_link {
+    position: relative;
+    background: rgba(245, 245, 245, 0.561);
+    width: 282px;
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 35px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.main_items_screen .show_projects_parking .project_link:hover {
+    border: 3px solid rgba(253, 71, 71, 0.602);
+    padding: 17px;
+}
+
+.main_items_screen .show_projects_parking .project_link p {
+    font-size: 20px;
+    color: blue;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+#show_more {
+    float: right;
+    left: 10%;
+    height: 50px;
+    width: 50px;
+    background: rgba(245, 245, 245, 0.561);
+    margin-top: 55px;
+    margin-left: 25px;
+    padding: 25px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#show_more:hover {
+    background-color: #ec6ed18a;
+}
+
+.footers {
+    width: 100%;
+    height: 50px;
+    background: rgba(245, 245, 245, 0.561);
+    font-size: 25px;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 20px;
+    /* position: relative;
+    margin-top: -50px;
+    height: 50px;
+    clear: both;
+    background: rgba(245, 245, 245, 0.561);
+    font-size: 25px; */
+}
+
+.footers a {
+    font-weight: 700;
+    color: rgb(202, 59, 202);
+}
+
+.footers p {
+    font-size: 20px;
+    text-align: center;
+}

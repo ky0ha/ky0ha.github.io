@@ -1,0 +1,466 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::selection{
+    color: rgba(250, 93, 93, 0.822);
+    background-color: rgba(0, 255, 255, 0.561);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: blueviolet;
+}
+a:visited {
+    color: blueviolet;
+}
+a:active {
+    color: red;
+}
+a:hover {
+    color: deeppink;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgb(89, 113, 251),rgb(170, 106, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main_items_screen {
+    padding: 0;
+    padding-bottom: 50px;
+    
+}
+
+.main_items_screen .nav_items {
+    width: 100%;
+    height: 88px;
+    background-image: linear-gradient(to bottom right, rgb(183, 117, 255), rgb(135, 147, 255));
+}
+
+.main_items_screen .nav_items div {
+    display: inline-block;
+}
+
+/* logo样式 */
+.main_items_screen .nav_items .main_items_logo {
+    padding-left: 14px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 14px;
+    display: inline-block;
+    position: absolute;
+}
+
+/* 导航栏样式 */
+.main_items_screen .nav_items .main_items_nav li {
+    height: 88px;
+    width: calc(25% - 4px);
+    margin-right: 2px;
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    float: left;
+    font-size: 25px;
+    border-left: 1px dotted gray;
+    border-right: 1px dotted gray;
+    transition: 0.25s;
+}
+
+.main_items_screen .nav_items .main_items_nav li:hover {
+    background: #ff40d6a9;
+}
+
+/* 当前页面在导航栏中特殊强调 */
+.main_items_screen .nav_items .main_items_nav .process_menu {
+    background: rgba(255, 105, 255, 0.746);
+    height: 85px;
+    border-bottom: 3px solid aqua;
+}
+
+/* 导航栏容纳盒子（真的有意义么 */
+.main_items_screen .nav_items .main_items_nav {
+    width: calc(50% + 326px);
+    height: 88px;
+    display: inline-block;
+    margin-left: 15%;
+    background: #f8a7ff77;
+    text-align: center;
+}
+
+/* 导航栏超链接文字位置 */
+.main_items_screen .nav_items .main_items_nav a {
+    height: 100%;
+    grid-row: 2;
+}
+
+/* 登录按钮的样式 */
+.main_items_screen .nav_items .main_items_login {
+    float: right;
+    height: 68px;
+    width: 68px;
+    box-shadow: 0 10px 50px 0px rgb(59, 45, 159);
+    margin: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    background: #f8a7ff77;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.main_items_screen .nav_items .main_items_login:hover{
+    background: #ff40d6a9;
+    border-radius: 25px;
+    margin: 0px;
+    width: 88px;
+    height: 88px;
+}
+
+.main_items_screen .nav_items .main_items_login a{
+    grid-row: 2;
+}
+
+.footers {
+    /* width: 100%;
+    height: 50px;
+    background: rgba(245, 245, 245, 0.561);
+    font-size: 25px;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 20px; */
+    position: relative;
+    margin-top: -50px;
+    height: 50px;
+    clear: both;
+    background: rgba(245, 245, 245, 0.561);
+    font-size: 25px;
+}
+
+.footers a {
+    font-weight: 700;
+    color: rgb(202, 59, 202);
+}
+
+.footers p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.main_items_screen .icon_and_menu .icon_area_with_nick {
+    position: relative;
+    left: 10%;
+    top: 40px;
+    min-width: 50px;
+    max-width: 270px;
+    background: rgba(245, 245, 245, 0.561);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.main_items_screen .icon_and_menu .icon_area_with_nick .icon img {
+    border-radius: 50%;
+}
+
+.main_items_screen .icon_and_menu .icon_area_with_nick .nick_name {
+    font-size: 35px;
+    font-family: UD デジタル 教科書体 NP-B;
+}
+
+.main_items_screen .icon_and_menu .icon_area_with_nick .describe,
+.main_items_screen .icon_and_menu .icon_area_with_nick .contect {
+    font-size: 20px;
+    font-family: KaiTi;
+    font-weight: 700;
+}
+
+.main_items_screen .icon_and_menu .menu {
+    position: relative;
+    left: 10%;
+    top: 70px;
+    width: 290px;
+    max-width: 290px;
+    min-height: 160px;
+    background: rgba(245, 245, 245, 0.561);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.main_items_screen .icon_and_menu .menu p {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.main_items_screen .icon_and_menu .menu nav {
+    position: relative;
+    margin: 15px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.main_items_screen .icon_and_menu .menu li {
+    height: 55px;
+    width: calc(100% - 34px);
+    margin: 7px;
+    border: 2px dotted rgb(100, 100, 100);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.main_items_screen .icon_and_menu .menu a {
+    font-size: 17px;
+    line-height: 30px;
+    color: rgb(125, 31, 172);
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+    text-shadow: 0px 0px 1px rgb(0, 0, 0, 0.08);
+}
+
+.main_items_screen .icon_and_menu .menu span {
+    font-size: 15px;
+    text-align: right;
+    float: right;
+    color: rgb(75, 75, 75);
+}
+
+.main_items_screen .icon_and_menu .menu li:hover {
+    border-color: red;
+}
+
+.main_items_screen .icon_and_menu .menu a:hover {
+    color: violet;
+}
+
+.main_items_screen .main_text {
+    display: inline-block;
+    font-size: 16px;
+    text-shadow: 0px 0px 1px rgb(0, 0, 0, 0.08);
+    line-height: 1.5;
+    /* font-family: KaiTi; */
+    position: relative;
+    top: -761px;
+    left: calc(30% - 30px);
+    width: 1081px;
+    min-height: 100px;
+    background: rgba(245, 245, 245, 0.705);
+    margin: 10px;
+    margin-top: 0px;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: left;
+}
+
+.main_items_screen .main_text h1 {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px dotted gray;
+    margin-bottom: 20px;
+    counter-reset: section;
+}
+
+.main_items_screen .main_text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    counter-reset: subsection;
+}
+
+.main_items_screen .main_text h2:before {
+    counter-increment: section;
+    content: counter(section) ".";
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.main_items_screen .main_text h3 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.main_items_screen .main_text h3:before {
+    counter-increment: subsection;
+    content: counter(subsection);
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    font-size: 15px;
+    margin-right: .8em;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.main_items_screen .main_text p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.main_items_screen .main_text strong {
+    font-family: "宋体";
+    font-weight: 1500;
+    color: red;
+}
+
+.main_items_screen .main_text blockquote {
+    padding: 0 1em;
+    color: #345b8b;
+    border-left: 0.25em solid #dfe2e5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* white-space: pre; */
+    word-wrap: break-word;
+    word-break: break-all;
+    word-spacing: normal;
+}
+
+.main_items_screen .main_text li {
+    text-indent: 1.5em;
+    display: block;
+}
+
+#code_block {
+    background: #2d2d2d;
+    color: rgb(201,209,217);
+    font-family: Consolas;
+    text-align: left;
+    padding: 1em;
+    padding-left: 0.8em;
+    margin: 1em;
+    border-radius: 5px;
+    counter-reset: line;
+    white-space: normal;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    width: calc(100% - 63px);
+    overflow-x: auto;
+}
+
+#code_block code {
+    font-family: Consolas;
+}
+
+#code_block .key_word,
+#code_block .operator,
+#code_block .united {
+    color: rgb(255,123,114);
+}
+#code_block .value,
+#code_block .default_function_name,
+#code_block .attribute {
+    color: rgb(121,192,255);
+}
+#code_block .note {
+    color: rgb(139,148,158);
+}
+#code_block .created_function_name {
+    color: rgb(210,168,255);
+}
+#code_block .class_name {
+    color: rgb(247,162,87);
+}
+#code_block .string {
+    color: rgb(165,214,255);
+}
+#code_block .tag {
+    color: #7EE787;
+}
+#code_block .href_link {
+    color: rgb(165,214,255);
+    border-bottom: 2px solid rgb(165,214,255);
+}
+
+#code_block span {
+    display: block;
+    line-height: 1.5rem;
+    white-space: pre;
+}
+
+#code_block span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    border-right: 2px solid #999;
+    padding-right: .8em;
+    margin-right: 1em;
+    color: #999;
+}
+
+.main_items_screen .main_text .color_table {
+    width: 100%;
+    line-height: 2.5em;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: baseline;
+}
+
+.main_items_screen .main_text .color_table .type,
+.main_items_screen .main_text .color_table .name,
+.main_items_screen .main_text .color_table .color_number,
+.main_items_screen .main_text .color_table .color_style0,
+.main_items_screen .main_text .color_table .color_style1,
+.main_items_screen .main_text .color_table .color_style2,
+.main_items_screen .main_text .color_table .color_style3,
+.main_items_screen .main_text .color_table .color_style4,
+.main_items_screen .main_text .color_table .color_style5,
+.main_items_screen .main_text .color_table .color_style6,
+.main_items_screen .main_text .color_table .color_style7 {
+    border:2px solid #345b8b;
+}
+
+.main_items_screen .main_text .color_table .type {
+    width: 13em;
+}
+.main_items_screen .main_text .color_table .name {
+    width: 19em;
+}
+.main_items_screen .main_text .color_table .color_number {
+    width: 19em;
+}
+
+.main_items_screen .main_text .color_table .color_style1 {
+    background-color: rgb(255,123,114);
+}
+.main_items_screen .main_text .color_table .color_style2 {
+    background-color: rgb(121,192,255);
+}
+.main_items_screen .main_text .color_table .color_style3 {
+    background-color: rgb(139,148,158);
+}
+.main_items_screen .main_text .color_table .color_style4 {
+    background-color: rgb(210,168,255);
+}
+.main_items_screen .main_text .color_table .color_style5 {
+    background-color: rgb(247,162,87);
+}
+.main_items_screen .main_text .color_table .color_style6 {
+    background-color: rgb(165,214,255);
+}
+.main_items_screen .main_text .color_table .color_style7 {
+    background-color: #7EE787;
+}
